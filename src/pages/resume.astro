@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro'
+import resumeData from '../data/resume'
+import ResumeHero from '../components/resume/ResumeHero'
+import ResumeSkills from '../components/resume/ResumeSkills'
+import ResumeLanguages from '../components/resume/ResumeLanguages'
+import ResumeEducation from '../components/resume/ResumeEducation'
+import ResumeExperience from '../components/resume/ResumeExperience'
+
+const { sections } = resumeData
+---
+
+<Layout title="Resume – Alexander Lindfors">
+  <div class="rise-in flex flex-col gap-4 md:gap-10">
+    <ResumeHero
+      name={resumeData.name}
+      subtitles={resumeData.subtitles}
+      tagline={resumeData.tagline}
+      contact={resumeData.contact}
+    />
+
+    <div class="border-t border-(--line)"></div>
+
+    <!--
+      Mobile order:  Experience → Education → Languages → Skills
+      Desktop order: [Education, Languages, Skills] | [Experience]
+    -->
+    <div
+      class="grid grid-cols-1 gap-8 lg:grid-cols-[240px_1fr] lg:gap-x-0 lg:gap-y-8"
+    >
+      <!-- Experience — order-1 mobile, right col spanning all rows desktop -->
+      <div
+        class="order-1 lg:col-start-2 lg:row-start-1 lg:row-span-4 lg:pl-10 flex flex-col gap-6"
+      >
+        <ResumeExperience
+          title={sections.experience.title}
+          icon={sections.experience.icon}
+          experience={resumeData.experience}
+        />
+        <ResumeExperience
+          title={sections.olderExperience.title}
+          icon={sections.olderExperience.icon}
+          experience={resumeData.olderExperience}
+          compact={true}
+        />
+      </div>
+
+      <!-- Education — order-2 mobile, left col row 1 desktop -->
+      <div class="order-2 lg:col-start-1 lg:row-start-1">
+        <ResumeEducation
+          title={sections.education.title}
+          icon={sections.education.icon}
+          education={resumeData.education}
+        />
+      </div>
+
+      <!-- Languages — order-3 mobile, left col row 2 desktop -->
+      <div class="order-3 lg:col-start-1 lg:row-start-2">
+        <ResumeLanguages
+          title={sections.languages.title}
+          icon={sections.languages.icon}
+          languages={resumeData.languages}
+        />
+      </div>
+
+      <!-- Skills — order-4 mobile, left col row 3 desktop -->
+      <div class="order-4 lg:col-start-1 lg:row-start-3">
+        <ResumeSkills
+          title={sections.skills.title}
+          icon={sections.skills.icon}
+          skills={resumeData.skills}
+        />
+      </div>
+    </div>
+  </div>
+</Layout>

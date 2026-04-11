@@ -19,7 +19,7 @@ export default function ResumeHero({
         {tagline}
       </p>
 
-      <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+      <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm mt-2">
         <a
           href={`mailto:${contact.email}`}
           className="inline-flex items-center gap-1.5 font-medium no-underline text-(--sea-ink-soft) hover:text-(--lagoon-deep)"

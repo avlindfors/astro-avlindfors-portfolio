@@ -20,24 +20,33 @@ const resume: ResumeData = {
     skills: { icon: 'code', title: 'Skills' },
   },
   skills: [
-    'React',
-    'TypeScript',
-    'Node.js',
-    'Next.js',
-    'Remix',
-    'HTML',
-    'CSS',
-    'Tailwind',
-    'Laravel',
-    'PHP',
-    'Java',
-    'GraphQL',
-    'Azure DevOps',
-    'GitHub Actions',
-    'Digital Ocean',
-    'AWS',
-    'Kubernetes',
-    'Docker',
+    {
+      category: 'Frontend',
+      items: [
+        'React',
+        'TypeScript',
+        'Next.js',
+        'Remix',
+        'HTML',
+        'CSS',
+        'Tailwind',
+      ],
+    },
+    {
+      category: 'Backend',
+      items: ['Node.js', 'Laravel', 'PHP', 'Java', 'GraphQL'],
+    },
+    {
+      category: 'Infrastructure',
+      items: [
+        'Azure DevOps',
+        'GitHub Actions',
+        'Digital Ocean',
+        'AWS',
+        'Kubernetes',
+        'Docker',
+      ],
+    },
   ],
   languages: [
     { name: 'English', proficiency: 'Fluent' },
@@ -76,7 +85,15 @@ const resume: ResumeData = {
       period: '2022 – Present',
       description:
         'I help realize your ideas with custom websites and applications. I work mainly with TypeScript (React, Remix, Next.js, Node) and PHP (Laravel).',
-      tools: ['React', 'TypeScript', 'Next.js', 'Remix', 'Node.js', 'Laravel', 'PHP'],
+      tools: [
+        'React',
+        'TypeScript',
+        'Next.js',
+        'Remix',
+        'Node.js',
+        'Laravel',
+        'PHP',
+      ],
     },
     {
       role: 'Software Engineering Consultant',
@@ -109,7 +126,7 @@ const resume: ResumeData = {
     {
       role: 'Full Stack Developer',
       company: 'Tablecheck',
-      location: 'Tokyo',
+      location: 'Tokyo, Japan',
       period: '2019',
       description:
         'Built and maintained Frontend applications, APIs and third-party integrations for a restaurant reservation platform serving customers and vendors across Asia. Worked in a cross-functional team alongside product managers, designers, and QA.',

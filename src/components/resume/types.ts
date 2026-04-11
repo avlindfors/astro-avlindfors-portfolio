@@ -37,12 +37,17 @@ export interface Experience {
   tools: string[]
 }
 
+export interface SkillCategory {
+  category: string
+  items: string[]
+}
+
 export interface ResumeData {
   name: string
   subtitles: string[]
   tagline: string
   contact: Contact
-  skills: string[]
+  skills: SkillCategory[]
   languages: Language[]
   education: Education[]
   experience: Experience[]

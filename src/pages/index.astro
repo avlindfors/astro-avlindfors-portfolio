@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Alexander Lindfors">
+  <div>
+    <section class="relative">
+      <div class="pointer-events-none absolute -left-20 -top-24 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(79,184,178,0.32),transparent_66%)]" />
+      <div class="pointer-events-none absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(47,106,74,0.18),transparent_66%)]" />
+      <p class="island-kicker">
+        Hello there <span class="text-lg">👋</span>, my name is
+      </p>
+      <div class="mb-2">
+        <h1 class="display-title max-w-3xl text-4xl leading-[1.02] font-bold tracking-tight text-(--sea-ink) sm:text-6xl">
+          Alexander Lindfors
+        </h1>
+        <p class="text-xs">アレックス</p>
+      </div>
+      <p class="mb-0.5">Software Engineer &bull; Full Stack Developer</p>
+      <p class="mb-8 text-base text-(--sea-ink-soft) sm:text-lg">
+        I'm Alexander, a full stack developer based in Stockholm with a
+        Computer Science degree from KTH. I specialize in building modern web
+        applications with React, TypeScript, and Node — from polished user
+        interfaces to robust APIs.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a
+          href="/resume"
+          class="rounded-full border border-[rgba(50,143,151,0.3)] bg-[rgba(79,184,178,0.14)] px-5 py-2.5 text-sm font-semibold text-(--lagoon-deep) no-underline transition hover:-translate-y-0.5 hover:bg-[rgba(79,184,178,0.24)]"
+        >
+          View Resume
+        </a>
+        <a
+          href="mailto:alex@avlindfors.com"
+          class="rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>
