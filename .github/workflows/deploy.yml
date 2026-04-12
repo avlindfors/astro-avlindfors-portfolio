@@ -31,10 +31,9 @@ jobs:
           host: ${{ vars.VPS_IP }}
           username: ${{ vars.VPS_USER }}
           key: ${{ secrets.PRIVATE_KEY }}
-          envs: GITHUB_TOKEN,GITHUB_ACTOR
           script: |
             IMAGE=ghcr.io/${{ github.repository }}:latest
-            echo $GITHUB_TOKEN | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
+            docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
             docker pull $IMAGE
             docker stop avlindfors-portfolio || true
             docker rm avlindfors-portfolio || true
