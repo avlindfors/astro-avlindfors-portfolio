@@ -9,8 +9,8 @@ export default function Footer() {
           <div className="flex flex-col gap-3">
             <p className="island-kicker">Navigation</p>
             <nav className="flex flex-col gap-2 text-sm font-medium">
-              <a href="/" className="nav-link w-fit">Home</a>
-              <a href="/resume" className="nav-link w-fit">Resume</a>
+              <a href="/" className="nav-link w-fit">Resume</a>
+              <a href="/about" className="nav-link w-fit">About</a>
             </nav>
           </div>
 

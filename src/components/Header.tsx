@@ -3,8 +3,8 @@ import { createPortal } from 'react-dom'
 import ThemeToggle from './ThemeToggle'
 
 const NAV_LINKS = [
-  { to: '/', label: 'Start' },
-  { to: '/resume', label: 'Resume' },
+  { to: '/', label: 'Resume' },
+  { to: '/about', label: 'About' },
 ] as const
 
 export default function Header({ pathname }: { pathname: string }) {

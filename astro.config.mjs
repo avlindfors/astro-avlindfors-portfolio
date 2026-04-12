@@ -5,6 +5,9 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   integrations: [react()],
   output: 'static',
+  redirects: {
+    '/resume': '/',
+  },
   vite: {
     plugins: [tailwindcss()],
   },

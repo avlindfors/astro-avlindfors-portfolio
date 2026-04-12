@@ -1,83 +1,76 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import FeatureSection from '../components/FeatureSection.astro'
+import resumeData from '../data/resume'
+import ResumeHero from '../components/resume/ResumeHero'
+import ResumeSkills from '../components/resume/ResumeSkills'
+import ResumeLanguages from '../components/resume/ResumeLanguages'
+import ResumeEducation from '../components/resume/ResumeEducation'
+import ResumeExperience from '../components/resume/ResumeExperience'
+
+const { sections } = resumeData
 ---
 
-<Layout title="Alexander Lindfors">
-  <div class="flex flex-col gap-16">
-    <!-- Hero -->
-    <section>
-      <p class="island-kicker">
-        Hello there <span class="text-lg">👋</span>, my name is
-      </p>
-      <div class="mb-2">
-        <h1
-          class="display-title max-w-3xl text-4xl leading-[1.02] font-bold tracking-tight text-(--sea-ink) sm:text-6xl"
-        >
-          Alexander Lindfors
-        </h1>
-        <!-- <p class="text-xs">アレックス</p> -->
-      </div>
-      <p class="mb-2 text-sm">Software Engineer &bull; Full Stack Developer</p>
-      <p class="mb-8 text-base text-(--sea-ink-soft) sm:text-lg">
-        I'm Alexander, a full stack developer based in Stockholm with a Computer
-        Science degree from KTH. I specialize in building modern web
-        applications with React, TypeScript, and Node — from polished user
-        interfaces to robust APIs.
-      </p>
-      <div class="flex flex-wrap gap-3">
-        <a
-          href="/resume"
-          class="rounded-full border border-[rgba(50,143,151,0.3)] bg-[rgba(79,184,178,0.14)] px-5 py-2.5 text-sm font-semibold text-(--lagoon-deep) no-underline transition hover:-translate-y-0.5 hover:bg-[rgba(79,184,178,0.24)]"
-        >
-          View Resume →
-        </a>
-        <a
-          href="mailto:alex@avlindfors.com"
-          class="rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
-        >
-          Get in Touch
-        </a>
-      </div>
-    </section>
-
-    <!-- What I do -->
-    <section class="flex flex-col">
-      <p class="island-kicker mb-4">What I do</p>
-      <div class="mb-8 border-t border-(--line)"></div>
-
-      <div class="flex flex-col gap-6 sm:gap-10">
-        <FeatureSection
-          kicker="React & TypeScript"
-          headline="Interfaces that hold up under pressure."
-          body="Most of my frontend work lives in React and TypeScript. I care about component boundaries, consistent state management, and UIs that behave the same way on the tenth click as on the first. I've built everything from customer-facing storefronts to internal tooling used by telecom support teams at scale."
-          align="left"
-        />
-
-        <FeatureSection
-          kicker="Node & Laravel"
-          headline="APIs and backends worth maintaining."
-          body="On the backend I work primarily in Node.js and Laravel. I've built payment APIs, order intake systems, and third-party integrations for clients ranging from grocery chains to restaurant platforms in Asia. Clean contracts, predictable behaviour, easy to reason about six months later."
-          align="right"
-        />
-
-        <FeatureSection
-          kicker="Consulting & Freelance"
-          headline="Independent since 2022."
-          body="After years embedded in product teams at Tele2 and Coop, I went independent. I work directly with clients to take an idea from brief to deployed — without layers of process in between. Small engagements or longer commitments, depending on what the project needs."
-          align="left"
-        />
-      </div>
-    </section>
-
-    <!-- Background -->
-    <FeatureSection
-      kicker="Background"
-      headline="Stockholm-based, globally experienced."
-      body="I started my career at Ericsson and Erlang Solutions after graduating from KTH, then spent a year in Tokyo working on a restaurant reservation platform at Tablecheck. Back in Stockholm, I've consulted for some of Sweden's largest companies before going independent in 2022."
-      align="center"
-      linkLabel="View Resume →"
-      linkHref="/resume"
+<Layout title="Resume – Alexander Lindfors">
+  <div class="rise-in flex flex-col gap-4 md:gap-10">
+    <ResumeHero
+      name={resumeData.name}
+      subtitles={resumeData.subtitles}
+      tagline={resumeData.tagline}
+      contact={resumeData.contact}
     />
+
+    <div class="border-t border-(--line)"></div>
+
+    <!--
+      Mobile order:  Experience → Education → Languages → Skills
+      Desktop order: [Education, Languages, Skills] | [Experience]
+    -->
+    <div
+      class="grid grid-cols-1 gap-8 lg:grid-cols-[240px_1fr] lg:gap-x-0 lg:gap-y-8"
+    >
+      <!-- Experience — order-1 mobile, right col spanning all rows desktop -->
+      <div
+        class="order-1 lg:col-start-2 lg:row-start-1 lg:row-span-4 lg:pl-10 flex flex-col gap-6"
+      >
+        <ResumeExperience
+          title={sections.experience.title}
+          icon={sections.experience.icon}
+          experience={resumeData.experience}
+        />
+        <ResumeExperience
+          title={sections.olderExperience.title}
+          icon={sections.olderExperience.icon}
+          experience={resumeData.olderExperience}
+          compact={true}
+        />
+      </div>
+
+      <!-- Education — order-2 mobile, left col row 1 desktop -->
+      <div class="order-2 lg:col-start-1 lg:row-start-1">
+        <ResumeEducation
+          title={sections.education.title}
+          icon={sections.education.icon}
+          education={resumeData.education}
+        />
+      </div>
+
+      <!-- Languages — order-3 mobile, left col row 2 desktop -->
+      <div class="order-3 lg:col-start-1 lg:row-start-2">
+        <ResumeLanguages
+          title={sections.languages.title}
+          icon={sections.languages.icon}
+          languages={resumeData.languages}
+        />
+      </div>
+
+      <!-- Skills — order-4 mobile, left col row 3 desktop -->
+      <div class="order-4 lg:col-start-1 lg:row-start-3">
+        <ResumeSkills
+          title={sections.skills.title}
+          icon={sections.skills.icon}
+          skills={resumeData.skills}
+        />
+      </div>
+    </div>
   </div>
 </Layout>
