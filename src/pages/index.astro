@@ -1,25 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import FeatureSection from '../components/FeatureSection.astro'
 ---
 
 <Layout title="Alexander Lindfors">
-  <div>
-    <section class="relative">
-      <div class="pointer-events-none absolute -left-20 -top-24 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(79,184,178,0.32),transparent_66%)]" />
-      <div class="pointer-events-none absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(47,106,74,0.18),transparent_66%)]" />
+  <div class="flex flex-col gap-16">
+    <!-- Hero -->
+    <section>
       <p class="island-kicker">
         Hello there <span class="text-lg">👋</span>, my name is
       </p>
       <div class="mb-2">
-        <h1 class="display-title max-w-3xl text-4xl leading-[1.02] font-bold tracking-tight text-(--sea-ink) sm:text-6xl">
+        <h1
+          class="display-title max-w-3xl text-4xl leading-[1.02] font-bold tracking-tight text-(--sea-ink) sm:text-6xl"
+        >
           Alexander Lindfors
         </h1>
-        <p class="text-xs">アレックス</p>
+        <!-- <p class="text-xs">アレックス</p> -->
       </div>
-      <p class="mb-0.5">Software Engineer &bull; Full Stack Developer</p>
+      <p class="mb-2 text-sm">Software Engineer &bull; Full Stack Developer</p>
       <p class="mb-8 text-base text-(--sea-ink-soft) sm:text-lg">
-        I'm Alexander, a full stack developer based in Stockholm with a
-        Computer Science degree from KTH. I specialize in building modern web
+        I'm Alexander, a full stack developer based in Stockholm with a Computer
+        Science degree from KTH. I specialize in building modern web
         applications with React, TypeScript, and Node — from polished user
         interfaces to robust APIs.
       </p>
@@ -38,5 +40,44 @@ import Layout from '../layouts/Layout.astro'
         </a>
       </div>
     </section>
+
+    <!-- What I do -->
+    <section class="flex flex-col">
+      <p class="island-kicker mb-4">What I do</p>
+      <div class="mb-8 border-t border-(--line)"></div>
+
+      <div class="flex flex-col gap-6 sm:gap-10">
+        <FeatureSection
+          kicker="React & TypeScript"
+          headline="Interfaces that hold up under pressure."
+          body="Most of my frontend work lives in React and TypeScript. I care about component boundaries, consistent state management, and UIs that behave the same way on the tenth click as on the first. I've built everything from customer-facing storefronts to internal tooling used by telecom support teams at scale."
+          align="left"
+        />
+
+        <FeatureSection
+          kicker="Node & Laravel"
+          headline="APIs and backends worth maintaining."
+          body="On the backend I work primarily in Node.js and Laravel. I've built payment APIs, order intake systems, and third-party integrations for clients ranging from grocery chains to restaurant platforms in Asia. Clean contracts, predictable behaviour, easy to reason about six months later."
+          align="right"
+        />
+
+        <FeatureSection
+          kicker="Consulting & Freelance"
+          headline="Independent since 2022."
+          body="After years embedded in product teams at Tele2 and Coop, I went independent. I work directly with clients to take an idea from brief to deployed — without layers of process in between. Small engagements or longer commitments, depending on what the project needs."
+          align="left"
+        />
+      </div>
+    </section>
+
+    <!-- Background -->
+    <FeatureSection
+      kicker="Background"
+      headline="Stockholm-based, globally experienced."
+      body="I started my career at Ericsson and Erlang Solutions after graduating from KTH, then spent a year in Tokyo working on a restaurant reservation platform at Tablecheck. Back in Stockholm, I've consulted for some of Sweden's largest companies before going independent in 2022."
+      align="center"
+      linkLabel="See full resume →"
+      linkHref="/resume"
+    />
   </div>
 </Layout>
