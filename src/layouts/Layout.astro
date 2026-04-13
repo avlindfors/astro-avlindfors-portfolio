@@ -5,10 +5,17 @@ import '../styles.css'
 
 interface Props {
   title?: string
+  description?: string
 }
 
-const { title = 'Alexander Lindfors' } = Astro.props
+const {
+  title = 'Alexander Lindfors | Full Stack Developer',
+  description = 'View resume for Alexander Lindfors, a Software engineer and Full Stack Developer.',
+} = Astro.props
 const pathname = Astro.url.pathname
+const siteUrl = 'https://avlindfors.com'
+const canonicalUrl = `${siteUrl}${pathname}`
+const ogImage = `${siteUrl}/avlindfors-og-en.png`
 
 const THEME_INIT_SCRIPT = `(function(){try{var stored=window.localStorage.getItem('theme');var mode=(stored==='light'||stored==='dark'||stored==='auto')?stored:'auto';var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;var resolved=mode==='auto'?(prefersDark?'dark':'light'):mode;var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(resolved);if(mode==='auto'){root.removeAttribute('data-theme')}else{root.setAttribute('data-theme',mode)}root.style.colorScheme=resolved;}catch(e){}})();`
 ---
@@ -18,9 +25,48 @@ const THEME_INIT_SCRIPT = `(function(){try{var stored=window.localStorage.getIte
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon/favicon-32x32.svg"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon/favicon-16x16.svg"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon/favicon-96x96.svg"
+      sizes="96x96"
+    />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <script set:html={THEME_INIT_SCRIPT} />
   </head>
-  <body class="font-sans antialiased wrap-anywhere selection:bg-[rgba(79,184,178,0.24)]">
+  <body
+    class="font-sans antialiased wrap-anywhere selection:bg-[rgba(79,184,178,0.24)]"
+  >
     <main>
       <div class="root-container flex flex-col gap-12">
         <Header client:load pathname={pathname} />
