@@ -1,0 +1,68 @@
+---
+import PrintLayout from '../layouts/PrintLayout.astro'
+import resumeData from '../data/resume'
+import ResumeHero from '../components/resume/ResumeHero'
+import ResumeSkills from '../components/resume/ResumeSkills'
+import ResumeLanguages from '../components/resume/ResumeLanguages'
+import ResumeEducation from '../components/resume/ResumeEducation'
+import ResumeExperience from '../components/resume/ResumeExperience'
+
+const { sections } = resumeData
+---
+
+<PrintLayout title="Alexander Lindfors - Resume">
+  <div class="flex flex-col gap-6">
+    <ResumeHero
+      name={resumeData.name}
+      subtitles={resumeData.subtitles}
+      tagline={resumeData.tagline}
+      contact={resumeData.contact}
+    />
+
+    <div class="border-t border-(--line)"></div>
+
+    <div class="grid grid-cols-[190px_1fr] gap-x-0 gap-y-6 print:gap-y-4">
+      <!-- Experience — right col spanning all rows -->
+      <div class="col-start-2 row-start-1 row-span-4 pl-3 flex flex-col gap-6">
+        <ResumeExperience
+          title={sections.experience.title}
+          icon={sections.experience.icon}
+          experience={resumeData.experience}
+        />
+        <ResumeExperience
+          title={sections.olderExperience.title}
+          icon={sections.olderExperience.icon}
+          experience={resumeData.olderExperience}
+          compact={true}
+        />
+      </div>
+
+      <!-- Education — left col row 1 -->
+      <div class="col-start-1 row-start-1">
+        <ResumeEducation
+          title={sections.education.title}
+          icon={sections.education.icon}
+          education={resumeData.education}
+        />
+      </div>
+
+      <!-- Languages — left col row 2 -->
+      <div class="col-start-1 row-start-2">
+        <ResumeLanguages
+          title={sections.languages.title}
+          icon={sections.languages.icon}
+          languages={resumeData.languages}
+        />
+      </div>
+
+      <!-- Skills — left col row 3 -->
+      <div class="col-start-1 row-start-3">
+        <ResumeSkills
+          title={sections.skills.title}
+          icon={sections.skills.icon}
+          skills={resumeData.skills}
+        />
+      </div>
+    </div>
+  </div>
+</PrintLayout>

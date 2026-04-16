@@ -1,5 +1,28 @@
 import type { ResumeData } from './types'
 
+function ContactLink({
+  href,
+  children,
+  target,
+  rel,
+}: {
+  href: string
+  children: React.ReactNode
+  target?: string
+  rel?: string
+}) {
+  return (
+    <a
+      href={href}
+      target={target}
+      rel={rel}
+      className="inline-flex items-center gap-1.5 print:gap-1 font-medium no-underline text-blue-950 hover:text-blue-800 dark:text-blue-100 hover:dark:text-indigo-200"
+    >
+      {children}
+    </a>
+  )
+}
+
 export default function ResumeHero({
   name,
   subtitles,
@@ -7,25 +30,24 @@ export default function ResumeHero({
   contact,
 }: Pick<ResumeData, 'name' | 'subtitles' | 'tagline' | 'contact'>) {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 print:gap-1.5">
       <div className="flex flex-col gap-1">
-        <h1 className="display-title m-0 text-4xl font-bold tracking-tight text-(--sea-ink) sm:text-5xl">
+        <h1 className="display-title m-0 text-4xl font-bold tracking-tight text-(--sea-ink) sm:text-5xl print:text-4xl">
           {name}
         </h1>
-        <p className="text-base font-thin">{subtitles.join(' · ')}</p>
+        <p className="text-base print:text-sm font-thin">
+          {subtitles.join(' · ')}
+        </p>
       </div>
 
-      <p className="max-w-2xl text-base text-(--sea-ink-soft) leading-relaxed">
+      <p className="max-w-2xl text-base print:text-sm text-(--sea-ink-soft) leading-relaxed">
         {tagline}
       </p>
 
-      <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm mt-2">
-        <a
-          href={`mailto:${contact.email}`}
-          className="inline-flex items-center gap-1.5 font-medium no-underline text-(--sea-ink-soft) hover:text-(--lagoon-deep)"
-        >
+      <div className="flex flex-wrap gap-x-5 gap-y-2 print:gap-x-4 print:gap-y-1.5 text-sm print:text-xs mt-2 print:mt-1.5">
+        <ContactLink href={`mailto:${contact.email}`}>
           <svg
-            className="size-4 shrink-0"
+            className="size-4 print:size-3.5 shrink-0"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -37,16 +59,15 @@ export default function ResumeHero({
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
           </svg>
           {contact.email}
-        </a>
+        </ContactLink>
 
-        <a
+        <ContactLink
           href={contact.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 font-medium no-underline text-(--sea-ink-soft) hover:text-(--lagoon-deep)"
         >
           <svg
-            className="size-4 shrink-0"
+            className="size-4 print:size-3.5 shrink-0"
             viewBox="0 0 24 24"
             fill="currentColor"
           >
@@ -55,16 +76,15 @@ export default function ResumeHero({
             <circle cx="4" cy="4" r="2" />
           </svg>
           {contact.linkedinHandle}
-        </a>
+        </ContactLink>
 
-        <a
+        <ContactLink
           href={contact.website}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 font-medium no-underline text-(--sea-ink-soft) hover:text-(--lagoon-deep)"
         >
           <svg
-            className="size-4 shrink-0"
+            className="size-4 print:size-3.5 shrink-0"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -76,7 +96,7 @@ export default function ResumeHero({
             <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
           </svg>
           {contact.websiteLabel}
-        </a>
+        </ContactLink>
       </div>
     </div>
   )

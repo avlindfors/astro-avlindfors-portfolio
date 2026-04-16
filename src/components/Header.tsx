@@ -44,7 +44,7 @@ export default function Header({ pathname }: { pathname: string }) {
           href="/"
           className="inline-flex items-center gap-2 py-1.5 text-sm text-(--sea-ink) no-underline"
         >
-          <span className="inline-flex items-center justify-center font-bold tracking-wide text-base bg-amber-700 text-white rounded-full size-8">
+          <span className="inline-flex items-center justify-center font-bold tracking-wide text-base bg-teal-700 dark:bg-teal-700 text-white rounded-full size-8">
             AL
           </span>
           <h1 className="m-0 shrink-0 text-base font-semibold tracking-tight">

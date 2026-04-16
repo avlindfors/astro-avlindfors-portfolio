@@ -1,5 +1,5 @@
 import type { Language, IconName } from './types'
-import { Icon } from './icons'
+import SectionHeader from './SectionHeader'
 
 export default function ResumeLanguages({
   languages,
@@ -12,14 +12,11 @@ export default function ResumeLanguages({
 }) {
   return (
     <div>
-      <div className="island-kicker flex items-center gap-1.5 mb-3">
-        {icon && <Icon name={icon} className="size-3.5 shrink-0" />}
-        <span>{title}</span>
-      </div>
-      <div className="flex flex-col gap-1.5">
+      <SectionHeader title={title} icon={icon} />
+      <div className="flex flex-col gap-1.5 print:gap-1">
         {languages.map((lang) => (
-          <div key={lang.name} className="flex items-baseline justify-between gap-2">
-            <span className="text-sm text-(--sea-ink) font-medium">{lang.name}</span>
+          <div key={lang.name} className="flex items-baseline justify-between gap-2 print:gap-1.5">
+            <span className="text-sm print:text-xs text-(--sea-ink) font-medium">{lang.name}</span>
             <span className="text-xs text-(--sea-ink-soft)">{lang.proficiency}</span>
           </div>
         ))}

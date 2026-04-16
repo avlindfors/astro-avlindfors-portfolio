@@ -1,0 +1,31 @@
+---
+import '../styles.css'
+
+interface Props {
+  title?: string
+}
+
+const { title = 'Alexander Lindfors | Resume' } = Astro.props
+
+const THEME_INIT_SCRIPT = `(function(){try{var stored=window.localStorage.getItem('theme');var mode=(stored==='light'||stored==='dark'||stored==='auto')?stored:'auto';var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;var resolved=mode==='auto'?(prefersDark?'dark':'light'):mode;var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(resolved);if(mode==='auto'){root.removeAttribute('data-theme')}else{root.setAttribute('data-theme',mode)}root.style.colorScheme=resolved;}catch(e){}})();`
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon/favicon-32x32.svg"
+      sizes="32x32"
+    />
+    <script set:html={THEME_INIT_SCRIPT} />
+  </head>
+  <body class="font-sans antialiased wrap-anywhere selection:bg-[rgba(79,184,178,0.24)]">
+    <main class="p-6 sm:p-10 print:p-4">
+      <slot />
+    </main>
+  </body>
+</html>

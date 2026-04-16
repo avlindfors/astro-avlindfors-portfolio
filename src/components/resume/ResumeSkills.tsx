@@ -1,5 +1,6 @@
 import type { ResumeData, IconName } from './types'
-import { Icon } from './icons'
+import SectionHeader from './SectionHeader'
+import Chip from './Chip'
 
 export default function ResumeSkills({
   skills,
@@ -8,24 +9,16 @@ export default function ResumeSkills({
 }: Pick<ResumeData, 'skills'> & { title?: string; icon?: IconName }) {
   return (
     <div>
-      <div className="island-kicker flex items-center gap-1.5 mb-3">
-        {icon && <Icon name={icon} className="size-3.5 shrink-0" />}
-        <span>{title}</span>
-      </div>
-      <div className="flex flex-col gap-4">
+      <SectionHeader title={title} icon={icon} />
+      <div className="flex flex-col gap-4 print:gap-3">
         {skills.map(({ category, items }) => (
-          <div key={category} className="flex flex-col gap-2">
-            <p className="text-xs font-semibold tracking-wider text-(--sea-ink-muted) opac uppercase">
+          <div key={category} className="flex flex-col gap-2.5 print:gap-1.5">
+            <p className="text-xs print:text-[10px] font-semibold tracking-wider text-teal-850 opacity-80">
               {category}
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 print:gap-1.5">
               {items.map((skill) => (
-                <span
-                  key={skill}
-                  className="rounded-full border border-(--chip-line) bg-(--chip-bg) px-3 py-1 text-xs font-semibold text-(--sea-ink)"
-                >
-                  {skill}
-                </span>
+                <Chip key={skill} label={skill} />
               ))}
             </div>
           </div>

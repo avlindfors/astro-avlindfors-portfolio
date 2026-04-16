@@ -6,6 +6,8 @@
   --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
 }
 
+@custom-variant dark (&:where(.dark, .dark *, [data-theme='dark'], [data-theme='dark'] *));
+
 :root {
   --sea-ink: #173a40;
   --sea-ink-soft: #416166;
@@ -144,14 +146,9 @@ body::after {
 }
 
 a {
-  color: var(--lagoon-deep);
   text-decoration-color: rgba(50, 143, 151, 0.4);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
-}
-
-a:hover {
-  color: #246f76;
 }
 
 code {

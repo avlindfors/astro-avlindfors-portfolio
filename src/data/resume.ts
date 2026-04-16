@@ -4,7 +4,7 @@ const resume: ResumeData = {
   name: 'Alexander Lindfors',
   subtitles: ['Software Engineer', 'Full Stack Developer'],
   tagline:
-    "I'm Alexander, a full stack developer based in Stockholm with a Computer Science degree from KTH. I specialize in building modern web applications with React, TypeScript, and Node — from polished user interfaces to robust APIs.",
+    "I'm Alexander, a full stack developer based in Stockholm with a Computer Science degree from the Royal Institute of Technology. I specialize in building modern web applications with React, TypeScript, and Node — from polished user interfaces to robust APIs.",
   contact: {
     email: 'alex@avlindfors.com',
     linkedin: 'https://www.linkedin.com/in/avlindfors',
@@ -56,7 +56,7 @@ const resume: ResumeData = {
   ],
   education: [
     {
-      institution: 'Royal Institute of Technology (KTH)',
+      institution: 'Royal Institute of Technology',
       degree: 'BSc Computer Science',
       location: 'Stockholm, Sweden',
       startYear: '2014',
@@ -81,7 +81,7 @@ const resume: ResumeData = {
     {
       role: 'Freelance Full Stack Developer & Consultant',
       company: 'avlindfors',
-      location: 'Online',
+      location: 'Stockholm, Sweden',
       period: '2022 – Present',
       description:
         'I help realize your ideas with custom websites and applications. I work mainly with TypeScript (React, Remix, Next.js, Node) and PHP (Laravel).',

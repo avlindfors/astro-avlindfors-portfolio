@@ -1,5 +1,5 @@
 import type { Education, IconName } from './types'
-import { Icon } from './icons'
+import SectionHeader from './SectionHeader'
 
 export default function ResumeEducation({
   education,
@@ -12,28 +12,27 @@ export default function ResumeEducation({
 }) {
   return (
     <div>
-      <div className="island-kicker flex items-center gap-1.5 mb-3">
-        {icon && <Icon name={icon} className="size-3.5 shrink-0" />}
-        <span>{title}</span>
-      </div>
-      <div className="flex flex-col gap-4">
+      <SectionHeader title={title} icon={icon} />
+      <div className="flex flex-col gap-4 print:gap-3">
         {education.map((item) => (
           <div key={item.institution}>
-            <p className="m-0 text-sm font-semibold text-(--sea-ink)">
+            <p className="m-0 text-sm print:text-xs font-semibold text-(--sea-ink) mb-0.5">
               {item.institution}
             </p>
-            <p className="m-0 text-sm text-(--sea-ink-soft) italic">
+            <p className="m-0 text-sm print:text-xs text-(--sea-ink-soft) italic">
               {item.degree}
             </p>
-            <p className="m-0 text-xs text-(--sea-ink-soft) mt-0.5">
-              {item.location}
+            <div className="flex justify-between items-baseline mt-0.5">
+              <p className="m-0 text-xs text-(--sea-ink-soft)">
+                {item.location}
+              </p>
               {(item.startYear || item.endYear) && (
-                <span className="ml-2 text-(--sea-ink-soft)">
-                  ({item.startYear ?? ''}
-                  {item.endYear ? ` - ${item.endYear}` : ''})
-                </span>
+                <p className="m-0 text-xs text-(--sea-ink-soft)">
+                  {item.startYear ?? ''}
+                  {item.endYear ? ` – ${item.endYear}` : ''}
+                </p>
               )}
-            </p>
+            </div>
           </div>
         ))}
       </div>
