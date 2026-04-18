@@ -10,7 +10,7 @@ export default function Footer() {
             <p className="island-kicker">Navigation</p>
             <nav className="flex flex-col gap-2 text-sm font-medium">
               <a href="/" className="nav-link w-fit">Resume</a>
-              <a href="/about" className="nav-link w-fit">About</a>
+              <a href="/about" className="nav-link w-fit">About me</a>
             </nav>
           </div>
 

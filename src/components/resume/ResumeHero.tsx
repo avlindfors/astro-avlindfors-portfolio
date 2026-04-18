@@ -17,7 +17,7 @@ function ContactLink({
       href={href}
       target={target}
       rel={rel}
-      className="inline-flex items-center gap-1.5 print:gap-1 font-medium no-underline text-blue-950 hover:text-blue-800 dark:text-blue-100 hover:dark:text-indigo-200"
+      className="inline-flex items-center gap-2 print:gap-1 font-medium no-underline text-blue-950 hover:text-blue-800 dark:text-blue-100 hover:dark:text-indigo-200"
     >
       {children}
     </a>
@@ -42,11 +42,11 @@ export default function ResumeHero({
         </p>
       </div>
 
-      <p className="max-w-2xl text-base print:text-sm text-(--sea-ink-soft) leading-relaxed">
+      <p className="max-w-2xl print:max-w-full text-base print:text-sm text-(--sea-ink-soft) print:text-gray-800 leading-relaxed">
         {tagline}
       </p>
 
-      <div className="flex flex-wrap gap-x-5 gap-y-2 print:gap-x-4 print:gap-y-1.5 text-sm print:text-xs mt-2 print:mt-1.5">
+      <div className="flex flex-col sm:flex-row flex-wrap gap-x-5 gap-y-3 print:gap-x-4 print:gap-y-1.5 text-sm print:text-xs mt-2 print:mt-1.5">
         <ContactLink href={`mailto:${contact.email}`}>
           <svg
             className="size-4 print:size-3.5 shrink-0"

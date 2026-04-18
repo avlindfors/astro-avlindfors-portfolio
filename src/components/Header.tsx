@@ -4,7 +4,7 @@ import ThemeToggle from './ThemeToggle'
 
 const NAV_LINKS = [
   { to: '/', label: 'Resume' },
-  { to: '/about', label: 'About' },
+  { to: '/about', label: 'About me' },
 ] as const
 
 export default function Header({ pathname }: { pathname: string }) {

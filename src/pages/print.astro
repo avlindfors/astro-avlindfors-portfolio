@@ -24,7 +24,9 @@ const { sections } = resumeData
 
     <div class="grid grid-cols-[190px_1fr] gap-x-0 gap-y-6 print:gap-y-4">
       <!-- Experience — right col spanning all rows -->
-      <div class="col-start-2 row-start-1 row-span-5 pl-3 flex flex-col gap-6">
+      <div
+        class="col-start-2 row-start-1 row-span-5 pl-3 flex flex-col gap-6 print:gap-3"
+      >
         <ResumeExperience
           title={sections.experience.title}
           icon={sections.experience.icon}

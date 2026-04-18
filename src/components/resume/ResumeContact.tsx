@@ -37,7 +37,7 @@ export default function ResumeContact({
               href={item.href}
               target={item.target}
               rel={item.rel}
-              className="text-sm print:text-xs text-(--sea-ink) font-medium no-underline hover:underline"
+              className="text-sm print:text-xs text-teal-900 dark:text-teal-100 font-medium no-underline hover:underline"
             >
               {item.label}
             </a>

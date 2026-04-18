@@ -4,7 +4,7 @@ const resume: ResumeData = {
   name: 'Alexander Lindfors',
   subtitles: ['Software Engineer', 'Full Stack Developer'],
   tagline:
-    "I'm Alexander — a full stack developer with 9 years of experience turning complex problems into clean, scalable web applications. I specialize in React, TypeScript and Node.js, from polished user interfaces to robust APIs.",
+    "I'm Alexander - a full stack developer with 9 years of experience turning complex problems into clean, scalable web applications. I specialize in React, TypeScript and Node.js, from polished user interfaces to robust APIs.",
   contact: {
     email: 'alex@avlindfors.com',
     linkedin: 'https://www.linkedin.com/in/avlindfors',
@@ -26,16 +26,15 @@ const resume: ResumeData = {
       items: [
         'React',
         'TypeScript',
-        'Next.js',
+        'AstroJS',
         'Remix',
-        'HTML',
-        'CSS',
+        'Vanilla Extract',
         'Tailwind',
       ],
     },
     {
       category: 'Backend',
-      items: ['Node.js', 'Laravel', 'PHP', 'Java', 'GraphQL'],
+      items: ['Node.js', 'Laravel', 'PHP', 'Java', 'tRPC', 'GraphQL'],
     },
     {
       category: 'Infrastructure',
@@ -47,6 +46,10 @@ const resume: ResumeData = {
         'Kubernetes',
         'Docker',
       ],
+    },
+    {
+      category: 'AI tools',
+      items: ['Claude Code', 'MCP Servers'],
     },
   ],
   languages: [
@@ -84,15 +87,15 @@ const resume: ResumeData = {
       location: 'Stockholm, Sweden',
       period: '2024 – Present',
       description:
-        'I help realize your ideas with custom websites and applications. I work mainly with TypeScript (React, Remix, Next.js, Node) and PHP (Laravel).',
+        "Continued my engagement at Tele2 under my own consultancy. Rebuilt the login experience to meet European accessibility standards, for all Tele2 brands, using a Swedish BankID integration. Delivered several greenfield internal tools with role-based authentication via the company's internal identity provider (Curity & Keycloak). ",
       tools: [
         'React',
         'TypeScript',
-        'Next.js',
-        'Remix',
+        'AstroJS',
         'Node.js',
-        'Laravel',
-        'PHP',
+        'Micro Frontends',
+        'React Query (tRPC)',
+        'Azure DevOps',
       ],
     },
     {
@@ -102,7 +105,7 @@ const resume: ResumeData = {
       link: 'https://ljusverket.se',
       period: '2024',
       description:
-        'Designed and developed a full-stack rental platform for a Stockholm-based film lighting and grip equipment company. The customer-facing site features a browsable inventory, user authentication, and light list management. Built an accompanying admin tool for invoice and inventory management.',
+        'Designed and developed a full-stack rental platform for a film lighting equipment company. The customer-facing site features a browsable inventory, user authentication, and light list management. Built an accompanying admin tool for invoice and inventory management, Mailgun for transactional Emails and AWS S3 for PDF storage.',
       tools: [
         'Laravel',
         'React',
@@ -120,17 +123,16 @@ const resume: ResumeData = {
       location: 'Stockholm, Sweden',
       period: '2021 – 2024',
       description:
-        'During my assignment at Tele2, a Swedish telecom company, I worked in close collaboration with design and stakeholder teams to successfully migrate multiple legacy services to modern platforms.',
+        "Collaborated closely with design and stakeholder teams to migrate multiple legacy services to modern platforms, consolidating several brands into a 'whitelabel' platform. Working across React frontends and Node.js backends in a micro frontend architecture, using tRPC for type-safe communication.",
       tools: [
         'React',
-        'Express',
+        'TypeScript',
         'Node.js',
         'Java',
         'GraphQL',
         'Redux',
-        'Azure DevOps',
-        'Kubernetes',
         'Micro Frontends',
+        'Azure DevOps',
       ],
     },
 
@@ -140,7 +142,7 @@ const resume: ResumeData = {
       location: 'Stockholm, Sweden',
       period: '2020 – 2021',
       description:
-        'At Coop, a Swedish grocery store chain, I developed order intake and payment solution APIs and authentication systems for online and in-store customers.',
+        "Developed APIs for order intake and payment processing, and developed authentication systems serving both online and in-store customers. Integrated an E-identification solution for one of Sweden's first unmanned grocery stores.",
       tools: ['Java', 'Spring Boot', 'Kafka', 'React', 'Vue'],
     },
     {
@@ -149,7 +151,7 @@ const resume: ResumeData = {
       location: 'Tokyo, Japan',
       period: '2019',
       description:
-        'Built and maintained Frontend applications, APIs and third-party integrations for a restaurant reservation platform serving customers and vendors across Asia. Worked in a cross-functional team alongside product managers, designers, and QA.',
+        'Built and maintained Frontend applications, APIs and third-party integrations for a restaurant reservation platform. Worked in a cross-functional team alongside product managers, designers, and QA.',
       tools: ['React', 'TypeScript', 'Node.js', 'AWS'],
     },
   ],
