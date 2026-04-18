@@ -4,7 +4,7 @@ const resume: ResumeData = {
   name: 'Alexander Lindfors',
   subtitles: ['Software Engineer', 'Full Stack Developer'],
   tagline:
-    "I'm Alexander, a full stack developer based in Stockholm with a Computer Science degree from the Royal Institute of Technology. I specialize in building modern web applications with React, TypeScript, and Node — from polished user interfaces to robust APIs.",
+    "I'm Alexander — a full stack developer with 9 years of experience turning complex problems into clean, scalable web applications. I specialize in React, TypeScript and Node.js, from polished user interfaces to robust APIs.",
   contact: {
     email: 'alex@avlindfors.com',
     linkedin: 'https://www.linkedin.com/in/avlindfors',
@@ -18,6 +18,7 @@ const resume: ResumeData = {
     education: { icon: 'book-open', title: 'Education' },
     languages: { icon: 'globe', title: 'Languages' },
     skills: { icon: 'code', title: 'Skills' },
+    contact: { icon: 'mail', title: 'Contact' },
   },
   skills: [
     {
@@ -51,8 +52,7 @@ const resume: ResumeData = {
   languages: [
     { name: 'English', proficiency: 'Fluent' },
     { name: 'Swedish', proficiency: 'Native' },
-    { name: 'Japanese', proficiency: 'Conversational' },
-    { name: 'Spanish', proficiency: 'Basic' },
+    { name: 'Japanese', proficiency: 'Intermediate' },
   ],
   education: [
     {
@@ -79,10 +79,10 @@ const resume: ResumeData = {
   ],
   experience: [
     {
-      role: 'Freelance Full Stack Developer & Consultant',
-      company: 'avlindfors',
+      role: 'Software Engineering Consultant',
+      company: 'avlindfors (Tele2)',
       location: 'Stockholm, Sweden',
-      period: '2022 – Present',
+      period: '2024 – Present',
       description:
         'I help realize your ideas with custom websites and applications. I work mainly with TypeScript (React, Remix, Next.js, Node) and PHP (Laravel).',
       tools: [
@@ -93,6 +93,25 @@ const resume: ResumeData = {
         'Node.js',
         'Laravel',
         'PHP',
+      ],
+    },
+    {
+      role: 'Freelance Project',
+      company: 'Ljusverket',
+      location: 'Stockholm, Sweden',
+      link: 'https://ljusverket.se',
+      period: '2024',
+      description:
+        'Designed and developed a full-stack rental platform for a Stockholm-based film lighting and grip equipment company. The customer-facing site features a browsable inventory, user authentication, and light list management. Built an accompanying admin tool for invoice and inventory management.',
+      tools: [
+        'Laravel',
+        'React',
+        'Tailwind',
+        'MySQL',
+        'Mailgun',
+        'AWS S3',
+        'GitHub Actions',
+        'Digital Ocean VPS',
       ],
     },
     {
@@ -114,6 +133,7 @@ const resume: ResumeData = {
         'Micro Frontends',
       ],
     },
+
     {
       role: 'Software Engineering Consultant',
       company: 'Forefront Consulting (Coop)',

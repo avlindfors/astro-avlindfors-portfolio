@@ -1,4 +1,5 @@
 import type { ResumeData } from './types'
+import HelloThere from '../HelloThere'
 
 function ContactLink({
   href,
@@ -31,6 +32,7 @@ export default function ResumeHero({
 }: Pick<ResumeData, 'name' | 'subtitles' | 'tagline' | 'contact'>) {
   return (
     <div className="flex flex-col gap-2 print:gap-1.5">
+      <HelloThere />
       <div className="flex flex-col gap-1">
         <h1 className="display-title m-0 text-4xl font-bold tracking-tight text-(--sea-ink) sm:text-5xl print:text-4xl">
           {name}

@@ -1,0 +1,19 @@
+import { useEffect, useRef } from 'react'
+
+export default function HelloThere() {
+  const emojiRef = useRef<HTMLSpanElement>(null)
+
+  useEffect(() => {
+    const el = emojiRef.current
+    if (!el) return
+    el.style.animation = 'wave 0.8s ease-in-out'
+    const onEnd = () => { el.style.animation = '' }
+    el.addEventListener('animationend', onEnd, { once: true })
+  }, [])
+
+  return (
+    <p className="island-kicker print:hidden wave-on-hover cursor-default">
+      Hello there <span ref={emojiRef} className="wave-emoji text-lg">👋</span>, my name is
+    </p>
+  )
+}

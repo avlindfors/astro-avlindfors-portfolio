@@ -4,6 +4,7 @@
 
 @theme {
   --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-print: Arial, Helvetica, sans-serif;
 }
 
 @custom-variant dark (&:where(.dark, .dark *, [data-theme='dark'], [data-theme='dark'] *));
@@ -89,7 +90,6 @@ body,
 body {
   margin: 0;
   color: var(--sea-ink);
-  font-family: var(--font-sans);
   background-color: var(--bg-base);
   background:
     radial-gradient(1100px 620px at -8% -10%, var(--hero-a), transparent 58%),
@@ -289,6 +289,32 @@ a {
 
 .rise-in {
   animation: rise-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(20deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(16deg); }
+  80% { transform: rotate(-6deg); }
+}
+
+.wave-on-hover:hover .wave-emoji {
+  animation: wave 0.8s ease-in-out;
+}
+
+.wave-emoji {
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+
+@keyframes subtle-bounce {
+  0%, 100% { transform: translateY(0); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+  50% { transform: translateY(4px); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+}
+
+.animate-subtle-bounce {
+  animation: subtle-bounce 1s infinite;
 }
 
 @keyframes rise-in {

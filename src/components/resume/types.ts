@@ -35,6 +35,7 @@ export interface Experience {
   period: string
   description: string
   tools: string[]
+  link?: string
 }
 
 export interface SkillCategory {
@@ -58,5 +59,6 @@ export interface ResumeData {
     education: SectionConfig
     languages: SectionConfig
     skills: SectionConfig
+    contact: SectionConfig
   }
 }

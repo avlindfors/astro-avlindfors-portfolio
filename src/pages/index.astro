@@ -6,6 +6,7 @@ import ResumeSkills from '../components/resume/ResumeSkills'
 import ResumeLanguages from '../components/resume/ResumeLanguages'
 import ResumeEducation from '../components/resume/ResumeEducation'
 import ResumeExperience from '../components/resume/ResumeExperience'
+import ResumeContact from '../components/resume/ResumeContact'
 
 const { sections } = resumeData
 ---
@@ -13,6 +14,7 @@ const { sections } = resumeData
 <Layout title="Resume – Alexander Lindfors">
   <div class="rise-in flex flex-col gap-4 md:gap-10">
     <ResumeHero
+      client:load
       name={resumeData.name}
       subtitles={resumeData.subtitles}
       tagline={resumeData.tagline}
@@ -30,7 +32,7 @@ const { sections } = resumeData
     >
       <!-- Experience — order-1 mobile, right col spanning all rows desktop -->
       <div
-        class="order-1 lg:col-start-2 lg:row-start-1 lg:row-span-4 lg:pl-6 flex flex-col gap-6"
+        class="order-1 lg:col-start-2 lg:row-start-1 lg:row-span-5 lg:pl-6 flex flex-col gap-6"
       >
         <ResumeExperience
           title={sections.experience.title}
@@ -54,8 +56,17 @@ const { sections } = resumeData
         />
       </div>
 
-      <!-- Languages — order-3 mobile, left col row 2 desktop -->
+      <!-- Skills — order-3 mobile, left col row 2 desktop -->
       <div class="order-3 lg:col-start-1 lg:row-start-2">
+        <ResumeSkills
+          title={sections.skills.title}
+          icon={sections.skills.icon}
+          skills={resumeData.skills}
+        />
+      </div>
+
+      <!-- Languages — order-4 mobile, left col row 3 desktop -->
+      <div class="order-4 lg:col-start-1 lg:row-start-3">
         <ResumeLanguages
           title={sections.languages.title}
           icon={sections.languages.icon}
@@ -63,12 +74,12 @@ const { sections } = resumeData
         />
       </div>
 
-      <!-- Skills — order-4 mobile, left col row 3 desktop -->
-      <div class="order-4 lg:col-start-1 lg:row-start-3">
-        <ResumeSkills
-          title={sections.skills.title}
-          icon={sections.skills.icon}
-          skills={resumeData.skills}
+      <!-- Contact — order-5 mobile, left col row 4 desktop -->
+      <div class="order-5 lg:col-start-1 lg:row-start-4">
+        <ResumeContact
+          title={sections.contact.title}
+          icon={sections.contact.icon}
+          contact={resumeData.contact}
         />
       </div>
     </div>

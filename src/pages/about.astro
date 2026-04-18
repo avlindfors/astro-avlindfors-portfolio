@@ -1,15 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import FeatureSection from '../components/FeatureSection.astro'
+import HelloThere from '../components/HelloThere'
+import resumeData from '../data/resume'
 ---
 
 <Layout title="About – Alexander Lindfors">
   <div class="flex flex-col gap-16">
     <!-- Hero -->
     <section>
-      <p class="island-kicker">
-        Hello there <span class="text-lg">👋</span>, my name is
-      </p>
+      <HelloThere client:load />
       <div class="mb-2">
         <h1
           class="display-title max-w-3xl text-4xl leading-[1.02] font-bold tracking-tight text-(--sea-ink) sm:text-6xl"
@@ -20,10 +20,7 @@ import FeatureSection from '../components/FeatureSection.astro'
       </div>
       <p class="mb-2 text-sm">Software Engineer &bull; Full Stack Developer</p>
       <p class="mb-8 text-base text-(--sea-ink-soft) sm:text-lg">
-        I'm Alexander, a full stack developer based in Stockholm with a Computer
-        Science degree from the Royal Institute of Technology. I specialize in
-        building modern web applications with React, TypeScript, and Node — from
-        polished user interfaces to robust APIs.
+        {resumeData.tagline}
       </p>
       <div class="flex flex-wrap gap-3">
         <a
@@ -43,10 +40,17 @@ import FeatureSection from '../components/FeatureSection.astro'
 
     <!-- What I do -->
     <section class="flex flex-col">
-      <p class="island-kicker mb-4">What I do</p>
+      <p
+        class="mb-4 flex items-center gap-2 text-sm text-pink-600 dark:text-pink-200 uppercase font-bold tracking-wider"
+      >
+        What I do <span
+          class="inline-block animate-subtle-bounce text-lg -translate-y-1.25"
+          >↓</span
+        >
+      </p>
       <div class="mb-8 border-t border-(--line)"></div>
 
-      <div class="flex flex-col gap-6 sm:gap-10">
+      <div class="flex flex-col gap-8 sm:gap-10">
         <FeatureSection
           kicker="React & TypeScript"
           headline="Interfaces that hold up under pressure."
@@ -55,7 +59,7 @@ import FeatureSection from '../components/FeatureSection.astro'
         />
 
         <FeatureSection
-          kicker="Node & Laravel"
+          kicker="Node.js & Laravel"
           headline="APIs and backends worth maintaining."
           body="On the backend I work primarily in Node.js and Laravel. I've built payment APIs, order intake systems, and third-party integrations across retail, telecom, and food-tech. Clean contracts, predictable behaviour, easy to reason about six months later."
           align="right"

@@ -47,9 +47,9 @@ export default function Header({ pathname }: { pathname: string }) {
           <span className="inline-flex items-center justify-center font-bold tracking-wide text-base bg-teal-700 dark:bg-teal-700 text-white rounded-full size-8">
             AL
           </span>
-          <h1 className="m-0 shrink-0 text-base font-semibold tracking-tight">
+          <span className="m-0 shrink-0 text-base font-semibold tracking-tight">
             Alexander Lindfors
-          </h1>
+          </span>
         </a>
 
         {/* Desktop nav */}
@@ -65,8 +65,8 @@ export default function Header({ pathname }: { pathname: string }) {
           ))}
         </div>
 
-        {/* Desktop theme toggle */}
-        <div className="hidden sm:block">
+        {/* Theme toggle — desktop: inline, mobile: right of logo */}
+        <div className="ml-auto sm:ml-0 flex items-center gap-2">
           <ThemeToggle />
         </div>
 
@@ -144,11 +144,6 @@ export default function Header({ pathname }: { pathname: string }) {
                   </a>
                 ))}
               </nav>
-
-              {/* Drawer footer */}
-              <div className="p-6 border-t border-(--line)">
-                <ThemeToggle />
-              </div>
             </div>
           </>,
           document.body,
