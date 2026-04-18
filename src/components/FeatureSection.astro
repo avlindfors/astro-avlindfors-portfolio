@@ -22,12 +22,22 @@ const alignClass = {
   right: 'sm:ml-auto sm:mr-0 sm:text-right',
   center: 'sm:mx-auto sm:text-center',
 }[align]
+
+const hoverTransform = {
+  left: 'hover:transform-[perspective(900px)_rotateX(1deg)_rotateY(2deg)]',
+  right: 'hover:transform-[perspective(900px)_rotateX(1deg)_rotateY(-2deg)]',
+  center: 'hover:transform-[perspective(900px)_rotateX(1deg)_rotateY(1.5deg)]',
+}[align]
 ---
 
-<div>
+<div
+  data-feature-card
+  data-align={align}
+  class={`group rounded-2xl border border-transparent p-2 sm:p-6 transition-all duration-300 ease-out hover:shadow-[0_8px_32px_rgba(23,58,64,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.35)] dark:hover:border-(--line) ${hoverTransform}`}
+>
   <div class={`mx-auto max-w-lg text-center ${alignClass}`}>
     <h2
-      class="display-title text-2xl font-bold tracking-wide text-(--sea-ink) sm:text-3xl mb-0.5"
+      class="display-title text-2xl font-bold tracking-wide text-(--sea-ink) sm:text-3xl mb-0.5 transition-colors duration-300 group-hover:text-pink-800 group-hover:dark:text-pink-200"
     >
       {kicker}
     </h2>
@@ -49,3 +59,49 @@ const alignClass = {
     }
   </div>
 </div>
+
+<style>
+  [data-feature-card].is-centered h2 {
+    color: rgb(157 23 77);
+  }
+  :root[data-theme='dark'] [data-feature-card].is-centered h2 {
+    color: rgb(251 207 232);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) [data-feature-card].is-centered h2 {
+      color: rgb(251 207 232);
+    }
+  }
+</style>
+
+<script>
+  const transforms: Record<string, string> = {
+    left: 'perspective(700px) rotateX(3deg) rotateY(4deg)',
+    right: 'perspective(700px) rotateX(3deg) rotateY(-4deg)',
+    center: 'perspective(700px) rotateX(2deg) rotateY(3deg)',
+  }
+
+  const isMobile = () => window.matchMedia('(max-width: 639px)').matches
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (!isMobile()) return
+      entries.forEach((entry) => {
+        const el = entry.target as HTMLElement
+        const align = el.dataset.align ?? 'left'
+        if (entry.isIntersecting) {
+          el.style.transform = transforms[align]
+          el.classList.add('is-centered')
+        } else {
+          el.style.transform = ''
+          el.classList.remove('is-centered')
+        }
+      })
+    },
+    { rootMargin: '-25% 0px -25% 0px', threshold: 0 },
+  )
+
+  document
+    .querySelectorAll('[data-feature-card]')
+    .forEach((el) => observer.observe(el))
+</script>
