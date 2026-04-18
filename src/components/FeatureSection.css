@@ -1,0 +1,82 @@
+:root {
+  --blob-opacity: 0.2;
+  --blob-hover-x: 35%;
+}
+
+.feature-blob,
+.feature-blob-center {
+  position: absolute;
+  border-radius: 9999px;
+  opacity: 0;
+  filter: blur(100px);
+  pointer-events: none;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.feature-blob {
+  width: 400px;
+  height: 400px;
+  bottom: 0;
+}
+
+[data-align='left'] .feature-blob {
+  right: 0;
+  transform: translateX(100%) translateY(30%);
+}
+[data-align='right'] .feature-blob {
+  left: 0;
+  transform: translateX(-100%) translateY(30%);
+}
+
+[data-feature-card][data-align='left']:hover .feature-blob,
+[data-feature-card][data-align='left'].is-centered .feature-blob {
+  transform: translateX(var(--blob-hover-x)) translateY(30%);
+  opacity: var(--blob-opacity);
+}
+[data-feature-card][data-align='right']:hover .feature-blob,
+[data-feature-card][data-align='right'].is-centered .feature-blob {
+  transform: translateX(calc(var(--blob-hover-x) * -1)) translateY(30%);
+  opacity: var(--blob-opacity);
+}
+
+.feature-blob-center {
+  width: 300px;
+  height: 300px;
+  bottom: 0;
+}
+.feature-blob-center--left {
+  left: 0;
+  transform: translateX(-100%) translateY(100%);
+}
+.feature-blob-center--right {
+  width: 480px;
+  height: 480px;
+  right: 0;
+  transform: translateX(100%) translateY(100%);
+}
+[data-feature-card][data-align='center']:hover .feature-blob-center--left,
+[data-feature-card][data-align='center'].is-centered
+  .feature-blob-center--left {
+  transform: translateX(calc(var(--blob-hover-x) * -1)) translateY(30%);
+  opacity: var(--blob-opacity);
+}
+[data-feature-card][data-align='center']:hover .feature-blob-center--right,
+[data-feature-card][data-align='center'].is-centered
+  .feature-blob-center--right {
+  transform: translateX(var(--blob-hover-x)) translateY(30%);
+  opacity: var(--blob-opacity);
+}
+
+[data-feature-card].is-centered h2 {
+  color: rgb(157 23 77);
+}
+:root[data-theme='dark'] [data-feature-card].is-centered h2 {
+  color: rgb(251 207 232);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) [data-feature-card].is-centered h2 {
+    color: rgb(251 207 232);
+  }
+}

@@ -10,7 +10,7 @@ interface Props {
 
 const {
   title = 'Alexander Lindfors | Full Stack Developer',
-  description = 'View resume for Alexander Lindfors, a Software engineer and Full Stack Developer.',
+  description = 'Full stack developer with 9 years of experience in React, TypeScript and Node.js. View the resume and portfolio of Alexander Lindfors.',
 } = Astro.props
 const pathname = Astro.url.pathname
 const siteUrl = 'https://avlindfors.com'
@@ -51,18 +51,38 @@ const THEME_INIT_SCRIPT = `(function(){try{var stored=window.localStorage.getIte
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Alexander Lindfors" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
     <script set:html={THEME_INIT_SCRIPT} />
+    <script is:inline>
+      (function () {
+        var t = 'color:#4fb8b2;font-family:monospace;font-size:12px;line-height:1.4;';
+        var d = 'color:#888;font-family:monospace;font-size:12px;line-height:1.8;';
+        var w = 'color:#ccc;font-family:monospace;font-size:12px;line-height:1.8;';
+        var art =
+          '    _    _     _____  __  __\n' +
+          '   / \\  | |   | ____| \\ \\/ /\n' +
+          '  / _ \\ | |   |  _|    \\  / \n' +
+          ' / ___ \\| |___| |___  / /\\ \\\n' +
+          '/_/   \\_\\_____|_____/_/  \\_\\';
+        console.log('%c' + art, t);
+        console.log('%cBuilt with Astro, Claude and a lot of patience.', d);
+        console.log('%cLooking for the resume?         %chttps://avlindfors.com', w, t);
+        console.log('%cWant to read a little more?     %chttps://avlindfors.com/about', w, t);
+      })();
+    </script>
   </head>
   <body
     class="font-sans antialiased wrap-anywhere selection:bg-[rgba(79,184,178,0.24)]"

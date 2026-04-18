@@ -8,6 +8,8 @@ interface Props {
   linkHref?: string
 }
 
+import './FeatureSection.css'
+
 const {
   kicker,
   headline,
@@ -33,9 +35,27 @@ const hoverTransform = {
 <div
   data-feature-card
   data-align={align}
-  class={`group rounded-2xl border border-transparent p-2 sm:p-6 transition-all duration-300 ease-out hover:shadow-[0_8px_32px_rgba(23,58,64,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.35)] dark:hover:border-(--line) ${hoverTransform}`}
+  class={`group relative overflow-hidden rounded-2xl border border-transparent p-2 sm:p-6 transition-all duration-300 ease-out hover:shadow-[0_8px_32px_rgba(23,58,64,0.12)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.35)] dark:hover:border-(--line) ${hoverTransform}`}
 >
-  <div class={`mx-auto max-w-lg text-center ${alignClass}`}>
+  {
+    align !== 'center' ? (
+      <div class="feature-blob bg-gray-400 dark:bg-slate-500 hidden sm:block" />
+    ) : (
+      <>
+        <div
+          class={
+            'feature-blob-center feature-blob-center--left bg-gray-400 dark:bg-slate-500 hidden sm:block'
+          }
+        />
+        <div
+          class={
+            'feature-blob-center feature-blob-center--right bg-gray-400 dark:bg-slate-500 hidden sm:block'
+          }
+        />
+      </>
+    )
+  }
+  <div class={`relative mx-auto max-w-lg text-center ${alignClass}`}>
     <h2
       class="display-title text-2xl font-bold tracking-wide text-(--sea-ink) sm:text-3xl mb-0.5 transition-colors duration-300 group-hover:text-pink-800 group-hover:dark:text-pink-200"
     >
@@ -59,20 +79,6 @@ const hoverTransform = {
     }
   </div>
 </div>
-
-<style>
-  [data-feature-card].is-centered h2 {
-    color: rgb(157 23 77);
-  }
-  :root[data-theme='dark'] [data-feature-card].is-centered h2 {
-    color: rgb(251 207 232);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme='light']) [data-feature-card].is-centered h2 {
-      color: rgb(251 207 232);
-    }
-  }
-</style>
 
 <script>
   const transforms: Record<string, string> = {
