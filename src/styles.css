@@ -282,11 +282,22 @@ a {
 }
 
 @keyframes wave {
-  0%, 100% { transform: rotate(0deg); }
-  20% { transform: rotate(20deg); }
-  40% { transform: rotate(-10deg); }
-  60% { transform: rotate(16deg); }
-  80% { transform: rotate(-6deg); }
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(20deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(16deg);
+  }
+  80% {
+    transform: rotate(-6deg);
+  }
 }
 
 .wave-on-hover:hover .wave-emoji {
@@ -299,8 +310,15 @@ a {
 }
 
 @keyframes subtle-bounce {
-  0%, 100% { transform: translateY(0); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
-  50% { transform: translateY(4px); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+  0%,
+  100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(4px);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
 }
 
 .animate-subtle-bounce {

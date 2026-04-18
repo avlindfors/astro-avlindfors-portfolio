@@ -90,10 +90,11 @@ export default function Header({ pathname }: { pathname: string }) {
             <div
               aria-hidden={!menuOpen}
               onClick={() => setMenuOpen(false)}
-              className={`fixed inset-0 z-40 bg-black/30 backdrop-blur-sm transition-opacity duration-300 ${menuOpen
+              className={`fixed inset-0 z-40 bg-black/30 backdrop-blur-sm transition-opacity duration-300 ${
+                menuOpen
                   ? 'opacity-100 pointer-events-auto'
                   : 'opacity-0 pointer-events-none'
-                }`}
+              }`}
             />
 
             {/* Drawer */}
@@ -101,8 +102,9 @@ export default function Header({ pathname }: { pathname: string }) {
               role="dialog"
               aria-modal="true"
               aria-label="Navigation menu"
-              className={`fixed inset-y-0 right-0 z-50 w-full max-w-xs flex flex-col island-shell transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${menuOpen ? 'translate-x-0' : 'translate-x-full'
-                }`}
+              className={`fixed inset-y-0 right-0 z-50 w-full max-w-xs flex flex-col island-shell transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                menuOpen ? 'translate-x-0' : 'translate-x-full'
+              }`}
             >
               {/* Drawer header */}
               <div className="flex items-center justify-between px-6 py-5 border-b border-(--line)">

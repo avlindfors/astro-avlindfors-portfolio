@@ -14,7 +14,7 @@ export default function HelloThere() {
   }, [])
 
   return (
-    <p className="print:hidden wave-on-hover cursor-default text-emerald-950 dark:text-emerald-200 tracking-widest uppercase font-bold text-xs">
+    <p className="print:hidden wave-on-hover cursor-default text-emerald-950 dark:text-emerald-100 tracking-widest uppercase font-bold text-xs">
       Hello there{' '}
       <span ref={emojiRef} className="wave-emoji text-lg">
         👋
