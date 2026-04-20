@@ -142,8 +142,8 @@ const resume: ResumeData = {
       location: 'Stockholm, Sweden',
       period: '2020 – 2021',
       description:
-        "Developed APIs for order intake and payment processing, and developed authentication systems serving both online and in-store customers. Integrated an E-identification solution for one of Sweden's first unmanned grocery stores.",
-      tools: ['Java', 'Spring Boot', 'Kafka', 'React', 'Vue'],
+        "Developed APIs in Spring Boot for order intake and payment processing, and developed authentication systems serving both online and in-store customers with Vue and Spring Boot. Integrated an E-identification solution for one of Sweden's first unmanned grocery stores.",
+      tools: ['Vue', 'React', 'Java', 'Spring Boot', 'Kafka'],
     },
     {
       role: 'Full Stack Developer',
@@ -151,8 +151,8 @@ const resume: ResumeData = {
       location: 'Tokyo, Japan',
       period: '2019',
       description:
-        'Built and maintained Frontend applications, APIs and third-party integrations for a restaurant reservation platform. Worked in a cross-functional team alongside product managers, designers, and QA.',
-      tools: ['React', 'TypeScript', 'Node.js', 'AWS'],
+        'Built and maintained React Frontend applications, Elixir APIs and third-party integrations for a restaurant reservation platform. Worked in a cross-functional team alongside product managers, designers, and QA.',
+      tools: ['React', 'TypeScript', 'Elixir', 'Node.js', 'AWS'],
     },
   ],
   olderExperience: [
