@@ -6,7 +6,6 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "test": "vitest run",
     "lint": "eslint",
     "format": "prettier --check .",
     "check": "prettier --write . && eslint --fix",
@@ -15,30 +14,31 @@
     "docker:down": "docker stop avlindfors-portfolio && docker rm avlindfors-portfolio",
     "docker:logs": "docker logs -f avlindfors-portfolio"
   },
+  "overrides": {
+    "devalue": "5.8.1",
+    "postcss": "8.5.15"
+  },
   "dependencies": {
-    "@astrojs/react": "latest",
+    "@astrojs/react": "5.0.5",
     "@astrojs/sitemap": "3.7.2",
-    "@tailwindcss/vite": "4.1.18",
-    "astro": "latest",
+    "@tailwindcss/vite": "4.3.0",
+    "astro": "6.3.7",
     "clsx": "2.1.1",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
-    "tailwindcss": "4.1.18"
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "tailwindcss": "4.3.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "0.5.16",
-    "@testing-library/dom": "10.4.1",
-    "@testing-library/react": "16.3.0",
-    "@types/node": "22.12.0",
-    "@types/react": "19.2.0",
-    "@types/react-dom": "19.2.0",
-    "eslint": "^9.39.4",
-    "eslint-plugin-astro": "^1.7.0",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "prettier": "3.8.1",
-    "typescript": "5.7.2",
-    "typescript-eslint": "^8.58.2",
-    "vitest": "3.0.5"
+    "@tailwindcss/typography": "0.5.19",
+    "@types/node": "25.9.1",
+    "@types/react": "19.2.15",
+    "@types/react-dom": "19.2.3",
+    "eslint": "9.39.4",
+    "eslint-plugin-astro": "1.7.0",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "prettier": "3.8.3",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.59.4"
   }
 }
