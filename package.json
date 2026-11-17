@@ -8,11 +8,7 @@
     "preview": "astro preview",
     "lint": "eslint",
     "format": "prettier --check .",
-    "check": "prettier --write . && eslint --fix",
-    "docker:build": "docker build -t avlindfors-portfolio .",
-    "docker:up": "npm run docker:build && docker stop avlindfors-portfolio 2>/dev/null; docker rm avlindfors-portfolio 2>/dev/null; docker run -d --name avlindfors-portfolio --restart unless-stopped -p 3000:80 avlindfors-portfolio",
-    "docker:down": "docker stop avlindfors-portfolio && docker rm avlindfors-portfolio",
-    "docker:logs": "docker logs -f avlindfors-portfolio"
+    "check": "prettier --write . && eslint --fix"
   },
   "overrides": {
     "devalue": "6.0.3",
