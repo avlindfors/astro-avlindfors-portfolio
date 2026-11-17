@@ -15,21 +15,22 @@
     "docker:logs": "docker logs -f avlindfors-portfolio"
   },
   "overrides": {
-    "devalue": "5.8.1",
-    "postcss": "8.5.15"
+    "devalue": "6.0.3",
+    "postcss": "8.5.33",
+    "postcss-selector-parser": "6.1.6"
   },
   "dependencies": {
-    "@astrojs/react": "5.0.5",
-    "@astrojs/sitemap": "3.7.2",
+    "@astrojs/react": "7.1.9",
+    "@astrojs/sitemap": "3.7.5",
     "@tailwindcss/vite": "4.3.0",
-    "astro": "6.3.7",
+    "astro": "7.4.12",
     "clsx": "2.1.1",
     "react": "19.2.6",
     "react-dom": "19.2.6",
     "tailwindcss": "4.3.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "0.5.19",
+    "@tailwindcss/typography": "0.5.20",
     "@types/node": "25.9.1",
     "@types/react": "19.2.15",
     "@types/react-dom": "19.2.3",
@@ -39,6 +40,9 @@
     "eslint-plugin-react-hooks": "7.1.1",
     "prettier": "3.8.3",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.59.4"
+    "typescript-eslint": "8.73.0"
+  },
+  "allowScripts": {
+    "sharp@0.35.5": true
   }
 }
