@@ -1,7 +1,0 @@
-node_modules
-.output
-.nitro
-dist
-.git
-.vscode
-*.md
